@@ -1,0 +1,22 @@
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    height: 60px;
+    background-color: var(--primary-color);
+}
+.home{
+    display: flex;
+    align-items: center;
+    padding-right: 20px;
+}
+.home span{
+    margin-left: 20px;
+}
+.home h2{
+    color: var(--white-color);
+}
+.home span img{
+    width: 45px;
+    height: 45px;
+}

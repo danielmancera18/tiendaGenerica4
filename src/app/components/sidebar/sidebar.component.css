@@ -1,0 +1,58 @@
+.sidebar{
+    position: relative;
+    height: 100%;
+    background-color: var(--secondary-color);
+    box-shadow: 6px 0px 1px lightgray;
+}
+.user-title{
+    width: 95%;
+    border-bottom: 3px solid var(--white-color);
+    padding: 20px 0 10px 8px;
+    margin: 0 auto 20px;
+    color: var(--white-color);
+}
+.clicleable{
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    height: 50px;
+    width: 90%;
+    margin: 15px auto;
+    padding-left: 10px;
+    color: var(--white-color);
+    text-decoration: none;
+}
+.clicleable:hover{
+    background-color: var(--white-color);
+    color: var(--secondary-color);
+}
+.clicleable img{
+    margin-right: 8px;
+}
+.products:hover img{
+    content: url("../../../assets/img/cuadrado_black.png");
+}
+.client:hover img{
+    content: url("../../../assets/img/user_black.png");
+}
+.sell:hover img{
+    content: url("../../../assets/img/cart_black.png");
+}
+.report:hover img{
+    content: url("../../../assets/img/report_black.png");
+}
+.con:hover img{
+    content: url("../../../assets/img/con_black.png");
+}
+
+.exit{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    right: 15px;
+    bottom: 2%;
+    width: fit-content;
+    color: var(--white-color);
+    cursor: pointer;
+}

@@ -1,0 +1,43 @@
+<div class="product-page">
+    <app-sidebar class="side"></app-sidebar>
+    <div class="info">
+        <h2>Productos</h2>
+        <article class="forms-container">
+            <form class="form">
+                <input *ngFor="let item of listaP" type="text" [name]="item" 
+                [placeholder]="item" autocomplete="off">
+                <!--guardar producto-->
+                <button *ngIf="editar==false" class="btn btn-save">Guardar</button>
+                <!--editar producto-->
+                <div class="edit-buttons">
+                    <button *ngIf="editar==true" (click)="cancelarEdit()" class="btn btn-cancel">Cancelar</button>
+                    <button *ngIf="editar==true" class="btn btn-edit">Editar</button>
+                </div>
+            </form>
+            <div class="file-container">
+                <h3>Subir Archivo</h3>
+                <input type="file" accept=".csv">
+                <button class="upload">cargar archivo</button>
+            </div>
+        </article>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th *ngFor="let title of listaP">{{title}}</th>
+                    <th><a class="deleteAll" (click)="eliminarTodo($event)">Eliminar Todo</a></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let producto of contenido">
+                    <td> {{producto.codigo}} </td>
+                    <td> {{producto.nit}} </td>
+                    <td> {{producto.nombre}} </td>
+                    <td> {{producto.precioCompra}} </td>
+                    <td> {{producto.ivaCompra}} </td>
+                    <td> {{producto.precioVenta}} </td>
+                    <td><a (click)="editarProducto()">Editar  </a>|<a>  Eliminar</a></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div> 
