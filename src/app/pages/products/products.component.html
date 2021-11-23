@@ -4,14 +4,18 @@
         <h2>Productos</h2>
         <article class="forms-container">
             <form class="form">
-                <input *ngFor="let item of listaP" type="text" [name]="item" 
-                [placeholder]="item" autocomplete="off">
+                <input type="text" name="codigo" placeholder="Código" autocomplete="off"  [(ngModel)]="codigo" >
+                <input type="text" name="nit" placeholder="Nit Proveedor" autocomplete="off"  [(ngModel)]="nit" >
+                <input type="text" name="nombre" placeholder="Nombre" autocomplete="off"  [(ngModel)]="nombre" >
+                <input type="text" name="precioCompra" placeholder="Precio Compra" autocomplete="off"  [(ngModel)]="precioC" >
+                <input type="text" name="ivaCompra" placeholder="iva Compra" autocomplete="off"  [(ngModel)]="ivaC" >
+                <input type="text" name="precioVenta" placeholder="precio Venta" autocomplete="off"  [(ngModel)]="precioV" >
                 <!--guardar producto-->
-                <button *ngIf="editar==false" class="btn btn-save">Guardar</button>
+                <button *ngIf="editar==false" (click)="guardarProducto()" class="btn btn-save">Guardar</button>
                 <!--editar producto-->
                 <div class="edit-buttons">
                     <button *ngIf="editar==true" (click)="cancelarEdit()" class="btn btn-cancel">Cancelar</button>
-                    <button *ngIf="editar==true" class="btn btn-edit">Editar</button>
+                    <button *ngIf="editar==true" (click)="editarProducto()" class="btn btn-edit">Editar</button>
                 </div>
             </form>
             <div class="file-container">
@@ -35,7 +39,7 @@
                     <td> {{producto.precioCompra}} </td>
                     <td> {{producto.ivaCompra}} </td>
                     <td> {{producto.precioVenta}} </td>
-                    <td><a (click)="editarProducto()">Editar  </a>|<a>  Eliminar</a></td>
+                    <td><a (click)="obtenerProducto(producto.codigo)">Editar</a></td>
                 </tr>
             </tbody>
         </table>

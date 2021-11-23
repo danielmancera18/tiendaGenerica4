@@ -4,6 +4,7 @@ import { ComponentsModule } from '../components/components.module';
 import { ProductsComponent } from './products/products.component';
 import { ClientsComponent } from './clients/clients.component';
 import { LoginComponent } from './login/login.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -14,7 +15,8 @@ import { LoginComponent } from './login/login.component';
   ],
   imports: [
     CommonModule,
-    ComponentsModule
+    ComponentsModule,
+    FormsModule
   ],
   exports:[
     ProductsComponent,
