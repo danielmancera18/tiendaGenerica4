@@ -20,8 +20,8 @@
             </form>
             <div class="file-container">
                 <h3>Subir Archivo</h3>
-                <input type="file" accept=".csv">
-                <button class="upload">cargar archivo</button>
+                <input type="file" id="fileinput" (change)="fileUpload($event)" accept=".csv">
+                <button class="upload" (click)="reload()">cargar archivo</button>
             </div>
         </article>
         <table class="table">

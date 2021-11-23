@@ -9,7 +9,6 @@ import { Component, OnInit } from '@angular/core';
 export class ProductsComponent implements OnInit {
 
   listaP = ["Código","Nit Proveedor","Nombre","Precio Compra","Iva Compra","Precio Venta"]
-  
   producto:string = ""
   codigo:string = ""
   nit:string=""
@@ -20,6 +19,9 @@ export class ProductsComponent implements OnInit {
 
   res:any;
   contenido:any;
+
+  keys:any;
+  values:any;
 
   urlapi:string = "http://localhost:8080/productos/productos"
   
@@ -35,11 +37,14 @@ export class ProductsComponent implements OnInit {
     })
 
   }
+  reload(){
+    location.reload()
+  }
   eliminarTodo(event: Event){
     event.preventDefault()
     this.objetohttp.delete(`${this.urlapi}/delete`).subscribe((res)=>{
       console.log(res)
-      location.reload()
+      this.reload()
     })
   }
 
@@ -63,7 +68,7 @@ export class ProductsComponent implements OnInit {
       precioVenta: this.precioV
     }).subscribe( (data: any) =>{
       console.log(data)
-      location.reload()
+      this.reload()
     })
   }
 
@@ -86,9 +91,42 @@ export class ProductsComponent implements OnInit {
     }).subscribe((data: any)=>{
       console.log(data)
     })
-    location.reload()
+    this.reload()
   }
 
+  fileUpload($event:any){
+    let file = $event.srcElement.files.item(0)
 
+    let reader: FileReader = new FileReader();
+       reader.readAsText(file);
+       reader.onload = (e) => {
+          let csv:string = reader.result as string;
+          
+          let json = this.csvJSON(csv)
+          let data = JSON.parse(json)
 
+          for(var item = 0; item < data.length; item++){
+            this.objetohttp.post(this.urlapi,data[item]).subscribe((data: any)=>{
+              console.log(data)
+            })
+          }
+       }
+  }
+
+  public csvJSON(csv:String) {
+
+    var lines = csv.split(/\r\n|\n/);
+    var result = [];
+    var headers = lines[0].split(";");
+    for (var i = 1; i < lines.length; i++) {
+        var obj:any = {};
+        var currentline = lines[i].split(";");
+        for (var j = 0; j < headers.length; j++) {
+            obj[headers[j]] = currentline[j];
+        }
+        result.push(obj);
+    }
+
+    return JSON.stringify(result);
+}
 }
