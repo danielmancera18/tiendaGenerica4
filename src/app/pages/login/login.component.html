@@ -1,4 +1,16 @@
 <section class="login">
-    <input type="text">
-    <input type="text">
+    <article class="login-container">
+        <h2><i class="fas fa-sign-in-alt"></i>  Iniciar sesión</h2>
+        <div class="input-container">
+            <input type="text" placeholder="Usuario" [(ngModel)] = "user">
+            <input type="password" placeholder="Contraseña" [(ngModel)] = "pass">
+        </div>
+        <div class="button-container">
+            <button class="btn cancel-button" (click)="reload()">Cancelar</button>
+            <button class="btn login-button" (click)="validar()" >Ingresar</button>
+        </div>
+        <div *ngIf="validado == 1" class="pop-up pass">Ingreso correcto redirigiendo al sitema...</div>
+        <div *ngIf="validado == 0" class="pop-up incorrect">Usuario o contraseña incorrecto.</div>
+    </article>
+    
 </section>
