@@ -16,15 +16,11 @@ export class ProductsComponent implements OnInit {
   precioC: any
   ivaC: any
   precioV: any
-
   res:any;
   contenido:any;
-
   keys:any;
-  values:any;
-
+  values:any
   urlapi:string = "http://localhost:8080/productos/productos"
-  
   editar:boolean = false
 
   constructor(private objetohttp:HttpClient) { }
@@ -37,9 +33,11 @@ export class ProductsComponent implements OnInit {
     })
 
   }
+
   reload(){
     location.reload()
   }
+  
   eliminarTodo(event: Event){
     event.preventDefault()
     this.objetohttp.delete(`${this.urlapi}/delete`).subscribe((res)=>{
@@ -128,5 +126,5 @@ export class ProductsComponent implements OnInit {
     }
 
     return JSON.stringify(result);
-}
+  }
 }

@@ -28,6 +28,9 @@ export class LoginComponent implements OnInit {
         },1500)
       }else{
         this.validado = 0
+        setTimeout(()=>{
+          this.validado = -1 
+        },4000)
       }
     }else{
       this.validado = 0

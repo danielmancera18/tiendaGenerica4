@@ -5,23 +5,28 @@ import { ProductsComponent } from './products/products.component';
 import { ClientsComponent } from './clients/clients.component';
 import { LoginComponent } from './login/login.component';
 import { FormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
+import { ProvidersComponent } from './providers/providers.component';
 
 
 @NgModule({
   declarations: [
     ProductsComponent,
     ClientsComponent,
-    LoginComponent
+    LoginComponent,
+    ProvidersComponent
   ],
   imports: [
     CommonModule,
     ComponentsModule,
-    FormsModule
+    FormsModule,
+    RouterModule
   ],
   exports:[
     ProductsComponent,
     LoginComponent,
-    ClientsComponent
+    ClientsComponent,
+    ProvidersComponent
   ]
 })
 export class PagesModule { }

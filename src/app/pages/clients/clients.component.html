@@ -4,16 +4,26 @@
         <h2>Clientes</h2>
         <article class="forms-container">
             <form class="form">
-                <input *ngFor="let item of listaP" type="text" [name]="item" 
-                [placeholder]="item" autocomplete="off">
+                <input type="text" name="Cedula" placeholder="cédula" autocomplete="off"  [(ngModel)]="cedula" >
+                <input type="text" name="Nombre" placeholder="Nombre Completo" autocomplete="off"  [(ngModel)]="nombre" >
+                <input type="text" name="Direccion" placeholder="Dirección" autocomplete="off"  [(ngModel)]="direccion" >
+                <input type="text" name="Telefono" placeholder="Teléfono" autocomplete="off"  [(ngModel)]="telefono" >
+                <input type="text" name="correoElectronico" placeholder="Correo Electrónico" autocomplete="off"  [(ngModel)]="correo" >
                 <!--guardar producto-->
-                <button *ngIf="editar==false" class="btn btn-save">Guardar</button>
+                <button *ngIf="editar==false" (click)="crearCliente()" class="btn btn-save">Guardar</button>
                 <!--editar producto-->
                 <div class="edit-buttons">
                     <button *ngIf="editar==true" (click)="cancelarEdit()" class="btn btn-cancel">Cancelar</button>
-                    <button *ngIf="editar==true" class="btn btn-edit">Editar</button>
+                    <button *ngIf="editar==true" (click)="Editar()" class="btn btn-edit">Editar</button>
                 </div>
             </form>
+            <div class="formtwo-container">
+                <div>
+                    <input type="text" placeholder="ingresar cédula" [(ngModel)]="cedulaC">
+                    <button (click)="obtenerCliente(cedulaC)">Consultar</button>
+                </div>
+                <a [routerLink]="['/proveedores']" routerLinkActive="router-link-active" >Sección de proveedores</a>
+            </div>
         </article>
         <table class="table">
             <thead>
@@ -23,13 +33,13 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>  </td>
-                    <td>  </td>
-                    <td>  </td>
-                    <td>  </td>
-                    <td>  </td>
-                    <td><a (click)="editarProducto()">Editar  </a>|<a>  Eliminar</a></td>
+                <tr *ngFor="let cliente of contenido">
+                    <td>{{cliente.cedula}}</td>
+                    <td>{{cliente.nombreCompleto}}</td>
+                    <td>{{cliente.direccion}}</td>
+                    <td>{{cliente.telefono}}</td>
+                    <td>{{cliente.correoElectronico}}</td>
+                    <td><a (click)="editarCliente(cliente.cedula)">Editar </a>|<a (click)="eliminarCliente(cliente.id)"> Eliminar</a></td>
                 </tr>
             </tbody>
         </table>

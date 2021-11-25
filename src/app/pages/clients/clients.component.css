@@ -49,16 +49,42 @@
     align-self: flex-start;
 }
 /* =============================== contenedor del archivo */
-.file-container{
+.formtwo-container{
+    display: flex;
+    flex-direction: column;
     width: 70%;
-    text-align: center;
+    align-items: center;
 }
-.file-container h3{
-    margin: 3%;
+.formtwo-container div{
+    width: 80%;
+    height: 35px;
 }
-.file-container .upload{
-    padding: 1.5px 3px;
-    margin-left: 5px;
+.formtwo-container input{
+    width: 80%;
+    height: 35px;
+    font-size: 18px;
+    padding-left: 15px;
+    outline: none;
+}
+.formtwo-container button{
+    width: 20%;
+    height: 35px;
+    font-size: 18px;
+}
+.formtwo-container a{
+    background-color: rgb(241, 241, 241);
+    border: 1px solid rgb(187, 187, 187);
+    text-decoration: none;
+    color: black;
+    height: 35px;
+    align-content: center;
+    margin-top: 15%;
+    padding:6px 5px 5px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.formtwo-container a:hover{
+    background-color: rgb(236, 236, 236);
 }
 /* =============================== contenedor de la tabla */
 .table{
