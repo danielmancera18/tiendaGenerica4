@@ -1,1 +1,47 @@
-<p>providers works!</p>
+<div class="product-page">
+    <app-sidebar class="side"></app-sidebar>
+    <div class="info">
+        <h2>Proveedores</h2>
+        <article class="forms-container">
+            <form class="form">
+                <input type="text" name="Cedula" placeholder="Nit proveedor" autocomplete="off"  [(ngModel)]="nit" >
+                <input type="text" name="Nombre" placeholder="Nombre proveedor" autocomplete="off"  [(ngModel)]="nombre" >
+                <input type="text" name="Direccion" placeholder="Dirección" autocomplete="off"  [(ngModel)]="direccion" >
+                <input type="text" name="Telefono" placeholder="Teléfono" autocomplete="off"  [(ngModel)]="telefono" >
+                <input type="text" name="correoElectronico" placeholder="ciudad" autocomplete="off"  [(ngModel)]="ciudad" >
+                <!--guardar producto-->
+                <button *ngIf="editar==false" (click)="crearProveedor()" class="btn btn-save">Guardar</button>
+                <!--editar producto-->
+                <div class="edit-buttons">
+                    <button *ngIf="editar==true" (click)="cancelarEdit()" class="btn btn-cancel">Cancelar</button>
+                    <button *ngIf="editar==true" (click)="Editar()" class="btn btn-edit">Editar</button>
+                </div>
+            </form>
+            <div class="formtwo-container">
+                <div>
+                    <input type="text" placeholder="ingresar Nit del proveedor" [(ngModel)]="nitP">
+                    <button (click)="obtenerProveedor(nitP)">Consultar</button>
+                </div>
+            </div>
+        </article>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th *ngFor="let title of listaP">{{title}}</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let proveedor of contenido">
+                    <td>{{proveedor.nit}}</td>
+                    <td>{{proveedor.nombre}}</td>
+                    <td>{{proveedor.direccion}}</td>
+                    <td>{{proveedor.telefono}}</td>
+                    <td>{{proveedor.ciudad}}</td>
+                    <td><a (click)="editarProveedor(proveedor.nit)">Editar </a>|<a (click)="eliminarProveedor(proveedor.id)"> Eliminar</a></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div> 
+
