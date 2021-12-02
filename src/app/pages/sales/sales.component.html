@@ -1,0 +1,85 @@
+<div class="product-page">
+    <app-sidebar class="side"></app-sidebar>
+    <div class="info">
+        <h2>Ventas</h2>
+        <section class="cliente">
+            <label for="cedula">Cédula</label>
+            <input  class="first" name="cedula" type="text" autocomplete="off" [(ngModel)]="cedula">
+            <button (click)="obtenerCliente(cedula)">Consultar</button>
+            <label for="cliente">Cliente</label>
+            <input class="read" name="cliente" readonly type="text" [value]="userName">
+            <label for="correo">Correo</label>
+            <input  class="read" name="correo" readonly type="text" [value]="userEmail">
+        </section>
+        <table>
+            <thead>
+                <tr>
+                    <th>Cod. Producto</th>
+                    <th>Nombre de producto</th>
+                    <th>Cant.</th>
+                    <th>Vlr. Total</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="firstTd">
+                        <input type="text" [(ngModel)]="codigo1">
+                        <button (click)="consultarProducto1(codigo1)">Consultar</button>
+                    </td>
+                    <td>
+                        <input type="text" readonly class="read" [value]="nombre1">
+                    </td>
+                    <td>
+                        <input type="text" readonly class="read" [value]="cantidad1">
+                    </td>
+                    <td>
+                        <input type="text" readonly class="read" [value]="precioVenta1">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="firstTd">
+                        <input type="text" [(ngModel)]="codigo2" >
+                        <button (click)="consultarProducto2(codigo2)" >Consultar</button>
+                    </td>
+                    <td>
+                        <input type="text" readonly class="read" [value]="nombre2">
+                    </td>
+                    <td>
+                        <input type="text" readonly class="read" [value]="cantidad2">
+                    </td>
+                    <td>
+                        <input type="text" readonly class="read" [value]="precioVenta2">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="firstTd">
+                        <input type="text" [(ngModel)]="codigo3">
+                        <button (click)="consultarProducto3(codigo3)" >Consultar</button>
+                    </td>
+                    <td>
+                        <input type="text" readonly class="read" [value]="nombre3">
+                    </td>
+                    <td>
+                        <input type="text" readonly class="read" [value]="cantidad3">
+                    </td>
+                    <td>
+                        <input type="text" readonly class="read" [value]="precioVenta3">
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <section class="sell">
+            <label for="">Total Venta</label>
+            <input class = "read" readonly type="text" [value]="totalventa">
+            <label for="">Total IVA</label>
+            <input class = "read" readonly type="text" [value]="totaliva">
+            <label for="">Total con IVA</label>
+            <input  class = "read" readonly type="text" [value]="total">
+            <button class="totalbutton"  *ngIf ="total1 == false" disabled="true">totalizar</button>
+            <button class="totalbutton" *ngIf ="total1 == true" (click)="totalizar()">totalizar</button>
+        </section>
+        <button class="confirm" *ngIf ="confirmar == false" disabled = "true">Confirmar</button>
+        <button class="confirm" *ngIf ="confirmar == true" (click)="crearVenta()">Confirmar</button>
+    </div>
+</div>
+

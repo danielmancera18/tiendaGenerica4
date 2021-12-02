@@ -1,0 +1,80 @@
+.product-page{
+    min-height: calc(100vh - 120px);
+    display: flex;
+}
+.side{
+    width: 20%;
+}
+/* =============================== contenedor del formulario y el titulo */
+
+.info{
+    width: 78%;
+    height: 100%;
+    margin: 0 auto;
+}
+.info h2{
+    width: 95%;
+    padding: 0 0 10px 15px;
+    margin: 3% auto 2%;
+    border-bottom: 3px solid var(--primary-color);
+}
+
+/* =============================== contenedor de consulta de cliente */
+.cliente{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 94%;
+    margin: 0 auto 40px;
+    text-align: center;
+
+}
+input{
+    height: 35px;
+    font-size: 18px;
+    outline: none;
+    padding-left: 7px;
+}
+.read{
+    cursor: default;
+}
+button{
+    height: 28px;
+    padding:0 5px;
+    margin-left: 3px;
+}
+/* =============================== tabla */
+table{
+    width: 95%;
+    margin: 0 auto;
+}
+.firstTd{
+    display: flex;
+    align-items: center;
+}
+table input{
+    width: 100%;
+}
+
+/* =============================== venta */
+.sell{
+    width: 34%;
+    float: right;
+    margin: 2% 2.7% 0 0;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    row-gap: 3px;
+    align-items: center;
+}
+.totalbutton{
+    grid-column-start: 2;
+    font-size: 18px;
+}
+.confirm{
+    margin-top: 15%;
+    margin-right: 15%;
+    float: right;
+    height: 50px;
+    width: 120px;
+    font-size: 18px;
+}
