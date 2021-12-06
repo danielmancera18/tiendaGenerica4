@@ -1,0 +1,27 @@
+<div class="product-page">
+    <app-sidebar class="side"></app-sidebar>
+    <div class="info">
+        <h2>Reportes</h2>
+        <article class="forms-container">
+            <button (click)="consultarClientes()">Listado de clientes</button>
+            <button disabled="true">Ventas por cliente</button>
+        </article>
+        <table *ngIf="clientes == 1" class="table">
+            <thead>
+                <tr>
+                    <th *ngFor="let title of listaP">{{title}}</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let cliente of contenido">
+                    <td>{{cliente.cedula}}</td>
+                    <td>{{cliente.nombreCompleto}}</td>
+                    <td>{{cliente.direccion}}</td>
+                    <td>{{cliente.telefono}}</td>
+                    <td>{{cliente.correoElectronico}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div> 
+

@@ -1,0 +1,63 @@
+.product-page{
+    min-height: calc(100vh - 120px);
+    display: flex;
+}
+.side{
+    width: 20%;
+}
+/* =============================== contenedor del formulario y el titulo */
+
+.info{
+    width: 78%;
+    height: 100%;
+    margin: 0 auto;
+}
+.info h2{
+    width: 95%;
+    padding: 0 0 10px 15px;
+    margin: 3% auto 2%;
+    border-bottom: 3px solid var(--primary-color);
+}
+.forms-container{
+    display: flex;
+    justify-content: space-around;
+    width: 60%;
+    margin: 0 auto;
+}
+.forms-container .form{
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+}
+.forms-container button{
+    width: 40%;
+    height: 40px;
+    padding: 5px;
+    font-size: 16px;
+    outline: none;
+}
+
+/* =============================== contenedor de la tabla */
+.table{
+    border-collapse: collapse;
+    text-align: center;
+    width: 95%;
+    margin: 3% auto 0;
+}
+.table th{
+    height: 40px;
+    color: white;
+    background-color: var(--primary-color);
+}
+.table tr{
+    height: 50px;
+}
+.table a{
+    color: royalblue;
+    text-decoration: none;
+    cursor: pointer;
+}
+.table a:hover{
+    color: var(--orange-color);
+    text-decoration: underline;
+}

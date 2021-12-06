@@ -8,6 +8,7 @@ import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { ProvidersComponent } from './providers/providers.component';
 import { SalesComponent } from './sales/sales.component';
+import { ReportComponent } from './report/report.component';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { SalesComponent } from './sales/sales.component';
     ClientsComponent,
     LoginComponent,
     ProvidersComponent,
-    SalesComponent
+    SalesComponent,
+    ReportComponent
   ],
   imports: [
     CommonModule,
