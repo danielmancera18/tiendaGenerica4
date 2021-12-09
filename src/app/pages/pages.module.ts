@@ -9,6 +9,7 @@ import { RouterModule } from '@angular/router';
 import { ProvidersComponent } from './providers/providers.component';
 import { SalesComponent } from './sales/sales.component';
 import { ReportComponent } from './report/report.component';
+import { ConsolidationComponent } from './consolidation/consolidation.component';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { ReportComponent } from './report/report.component';
     LoginComponent,
     ProvidersComponent,
     SalesComponent,
-    ReportComponent
+    ReportComponent,
+    ConsolidationComponent
   ],
   imports: [
     CommonModule,
